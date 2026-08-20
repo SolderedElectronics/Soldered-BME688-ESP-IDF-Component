@@ -22,5 +22,5 @@ jobs:
       - name: Upload component to ESP Registry
         uses: espressif/upload-components-ci-action@v2
         with:
-          components: "soldered-bme688: ."
+          components: "Soldered-BME688-ESP-IDF-Component: ."
           namespace: solderedelectronics
