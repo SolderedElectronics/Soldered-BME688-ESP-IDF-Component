@@ -11,6 +11,7 @@ dependencies.lock
 .vscode/
 .idea/
 *.swp
+.cache/
 
 # python
 __pycache__/

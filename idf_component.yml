@@ -1,4 +1,6 @@
-version: "0.0.3"
-description: "A simple example component"
-url: "https://github.com/SolderedElectronics/soldered-esp-idf-component-template"
+version: "0.1.0"
+description: "Driver for the Soldered BME688 environmental + gas sensor board (I2C, ESP-IDF)"
+url: "https://github.com/SolderedElectronics/Soldered-BME688-ESP-IDF-Component"
 license: "GPL-3.0"
+dependencies:
+  idf: ">=5.2"
