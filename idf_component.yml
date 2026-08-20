@@ -1,0 +1,4 @@
+version: "0.0.3"
+description: "A simple example component"
+url: "https://github.com/SolderedElectronics/soldered-esp-idf-component-template"
+license: "GPL-3.0"

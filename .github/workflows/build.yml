@@ -1,0 +1,33 @@
+name: Build Examples
+
+on:
+  push:
+  pull_request:
+  workflow_call:
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    outputs:
+      examples: ${{ steps.find.outputs.examples }}
+    steps:
+      - uses: actions/checkout@v6
+
+      - id: find
+        run: echo "examples=$(ls -d examples/*/ | sed 's:/$::' | jq -R -s -c 'split("\n")[:-1]')" >> "$GITHUB_OUTPUT"
+
+  build:
+    needs: discover
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        example: ${{ fromJson(needs.discover.outputs.examples) }}
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Build ${{ matrix.example }}
+        uses: espressif/esp-idf-ci-action@v1
+        with:
+          esp_idf_version: v6.0.2
+          target: esp32
+          path: ${{ matrix.example }}

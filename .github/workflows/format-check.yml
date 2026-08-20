@@ -1,0 +1,25 @@
+name: Format Check
+
+on:
+  push:
+  pull_request:
+  workflow_call:
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install astyle_py
+        run: pip install astyle_py==1.0.5
+
+      - name: Check formatting
+        run: |
+          astyle_py --astyle-version=3.4.7 --dry-run --rules=.astyle-rules.yml \
+            src/*.c include/*.h examples/*/main/*.c

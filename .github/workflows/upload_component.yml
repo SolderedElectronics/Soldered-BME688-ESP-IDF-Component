@@ -1,0 +1,26 @@
+name: Upload Component to Registry
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  format:
+    uses: ./.github/workflows/format-check.yml
+  build:
+    uses: ./.github/workflows/build.yml
+  upload:
+    needs: [format, build]
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Upload component to ESP Registry
+        uses: espressif/upload-components-ci-action@v2
+        with:
+          components: "soldered-esp-idf-component-template: ."
+          namespace: solderedelectronics
