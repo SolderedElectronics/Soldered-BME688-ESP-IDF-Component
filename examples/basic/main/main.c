@@ -8,7 +8,7 @@
 #include "freertos/task.h"
 #include "esp_log.h"
 #include "driver/i2c_master.h"
-#include "soldered-bme688.h"
+#include "soldered_bme688.h"
 
 /* Adjust these to match how the sensor is wired on your board */
 #define I2C_PORT    I2C_NUM_0

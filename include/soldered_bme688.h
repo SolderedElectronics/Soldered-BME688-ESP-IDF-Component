@@ -1,5 +1,5 @@
 /**
- * @file soldered-bme688.h
+ * @file soldered_bme688.h
  * @brief Public API for the soldered-bme688 component
  * @author Soldered Electronics
  */

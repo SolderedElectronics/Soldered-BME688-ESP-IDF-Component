@@ -1,5 +1,5 @@
 /**
- * @file soldered-bme688.c
+ * @file soldered_bme688.c
  * @brief Implementation for the soldered-bme688 component
  * @author Soldered Electronics
  */
@@ -9,7 +9,7 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "esp_rom_sys.h"
-#include "soldered-bme688.h"
+#include "soldered_bme688.h"
 #include "bme68x.h"
 
 struct bme688_dev {

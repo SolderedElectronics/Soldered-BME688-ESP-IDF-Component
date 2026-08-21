@@ -10,7 +10,7 @@ resistance) over I2C, for use with the [Qwiic ecosystem](https://soldered.com/co
 ### Repository Contents
 
 - **/src** - source files (.c), including the vendored Bosch `bme68x` Sensor API under `src/bosch-bme68x/`
-- **/include** - public header (`soldered-bme688.h`)
+- **/include** - public header (`soldered_bme688.h`)
 - **/examples** - examples for using the library
 - **_other_** - idf_component.yml manifest file for ESP Component Registry
 
@@ -18,7 +18,7 @@ resistance) over I2C, for use with the [Qwiic ecosystem](https://soldered.com/co
 
 This driver is a thin ESP-IDF wrapper (I2C glue over the new `driver/i2c_master.h` API) around Bosch's own
 open-source `bme68x` Sensor API, which is vendored unmodified under `src/bosch-bme68x/`. See
-`include/soldered-bme688.h` for the public API and `examples/basic` for a full working example: create an
+`include/soldered_bme688.h` for the public API and `examples/basic` for a full working example: create an
 `i2c_master_bus_handle_t`, call `bme688_init()`, optionally `bme688_configure()` /
 `bme688_set_heater_profile()`, then call `bme688_read()` in a loop.
 
